@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  address   String     @id @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now())
+  mainColor String     @default("black")
+  theme     String     @default("light")
+  Favorite  Favorite[]
+}
+
+model Favorite {
+  id          String   @id @default(uuid())
+  address     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  userAddress String?
+  name        String   @default("Node")
+  User        User?    @relation(fields: [userAddress], references: [address])
+}
+
+model BrubeckStats {
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  dailyAPR        Float
+  dailyAPY        Float
+  spotAPR         Float
+  spotAPY         Float
+  dailyDataStaked Float
+  spotDataStaked  Float
+}
