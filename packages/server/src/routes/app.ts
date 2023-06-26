@@ -1,18 +1,15 @@
 import express from "express";
-import { AppStatusParser } from "../schemas";
+import { ping, getStatus, getError, getAddressError } from "../controllers/app";
+import { validateEthereumAddress } from "../middlewares";
 
 const AppRouter = express.Router();
 
-AppRouter.get("/ping", (req, res, next) => {
-  res.json();
-});
+AppRouter.get("/ping", ping);
 
-AppRouter.get("/status", (req, res, next) => {
-  const uptime = process.uptime();
+AppRouter.get("/status", getStatus);
 
-  const parsedData = AppStatusParser.parse({ status: "OK", uptime });
-
-  return res.json(parsedData);
-});
+// Routes made to test specific middlewares
+AppRouter.get("/address-error/:address", [validateEthereumAddress], getAddressError);
+AppRouter.get("/error", getError);
 
 export default AppRouter;
