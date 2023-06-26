@@ -9,7 +9,7 @@ export async function getTopology(req: Request, res: Response, next: NextFunctio
 
     const interestRates = TopologyParser.parse(data);
 
-    res.json(interestRates);
+    res.json({ data: interestRates });
   } catch (e) {
     next(e);
   }

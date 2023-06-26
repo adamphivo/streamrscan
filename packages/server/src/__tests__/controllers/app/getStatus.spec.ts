@@ -8,6 +8,7 @@ describe("Ping test suite", () => {
     const response = await request(app).get("/status");
 
     expect(response.status).toBe(200);
-    AppStatusParser.parse(response.body);
+
+    AppStatusParser.parse(response.body.data);
   });
 });

@@ -6,5 +6,5 @@ export function getStatus(req: Request, res: Response, next: NextFunction) {
 
   const parsedData = AppStatusParser.parse({ status: "OK", uptime });
 
-  return res.json(parsedData);
+  return res.json({ data: parsedData });
 }
