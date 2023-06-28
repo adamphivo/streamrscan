@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
-import { app } from "../../app";
+import { app } from "@/app";
 
 describe("Error middleware test suite", () => {
   it("should handle thrown errors", async () => {

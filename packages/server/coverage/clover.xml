@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1687814029465" clover="3.2.0">
-  <project timestamp="1687814029465" name="All files">
-    <metrics statements="177" coveredstatements="175" conditionals="11" coveredconditionals="10" methods="9" coveredmethods="9" elements="197" coveredelements="194" complexity="0" loc="177" ncloc="177" packages="9" files="22" classes="22"/>
+<coverage generated="1687929552113" clover="3.2.0">
+  <project timestamp="1687929552113" name="All files">
+    <metrics statements="220" coveredstatements="216" conditionals="15" coveredconditionals="13" methods="10" coveredmethods="10" elements="245" coveredelements="239" complexity="0" loc="220" ncloc="220" packages="10" files="27" classes="27"/>
     <package name="src">
       <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="/home/adam/Projects/scan/packages/server/src/app.ts">
@@ -25,7 +25,11 @@
       </file>
     </package>
     <package name="src.configurations">
-      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/home/adam/Projects/scan/packages/server/src/configurations/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
       <file name="urls.ts" path="/home/adam/Projects/scan/packages/server/src/configurations/urls.ts">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -96,25 +100,25 @@
       </file>
     </package>
     <package name="src.controllers.network">
-      <metrics statements="34" coveredstatements="32" conditionals="3" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <metrics statements="34" coveredstatements="30" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <file name="getInterestRates.ts" path="/home/adam/Projects/scan/packages/server/src/controllers/network/getInterestRates.ts">
-        <metrics statements="16" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="16" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
       <file name="getTopology.ts" path="/home/adam/Projects/scan/packages/server/src/controllers/network/getTopology.ts">
         <metrics statements="16" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -222,7 +226,7 @@
       </file>
     </package>
     <package name="src.schemas">
-      <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="46" coveredstatements="46" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="AppStatus.ts" path="/home/adam/Projects/scan/packages/server/src/schemas/AppStatus.ts">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -233,6 +237,31 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="InterestRates.ts" path="/home/adam/Projects/scan/packages/server/src/schemas/InterestRates.ts">
+        <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
       </file>
       <file name="Topology.ts" path="/home/adam/Projects/scan/packages/server/src/schemas/Topology.ts">
         <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -255,6 +284,38 @@
       <file name="index.ts" path="/home/adam/Projects/scan/packages/server/src/schemas/index.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services.external.fetchNodeRewards">
+      <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="fetch.ts" path="/home/adam/Projects/scan/packages/server/src/services/external/fetchNodeRewards/fetch.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/adam/Projects/scan/packages/server/src/services/external/fetchNodeRewards/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+      <file name="schema.ts" path="/home/adam/Projects/scan/packages/server/src/services/external/fetchNodeRewards/schema.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.utils">

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
-import { AppStatusParser } from "../../../schemas";
-import { app } from "../../../app";
+import { AppStatusParser } from "@/schemas";
+import { app } from "@/app";
 
 describe("Ping test suite", () => {
   it("should return a 200 status", async () => {

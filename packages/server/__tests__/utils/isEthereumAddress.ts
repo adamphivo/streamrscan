@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { isEthereumAddress } from "src/utils/isEthereumAddress";
+import { isEthereumAddress } from "@/utils/isEthereumAddress";
 
 describe("iSethereum address test suite", () => {
   it("should return true if the address is correct", () => {

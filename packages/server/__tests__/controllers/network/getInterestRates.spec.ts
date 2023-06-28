@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, test } from "vitest";
 import request from "supertest";
-import { app } from "../../../app";
+import { app } from "@/app";
 
 describe("Interest test suite", () => {
   test("should return the interest rates", async () => {

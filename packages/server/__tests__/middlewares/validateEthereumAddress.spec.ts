@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import request from "supertest";
-import { app } from "../../app";
+import { app } from "@/app";
 
 describe("Validate ethereum address middleware test suite", () => {
   it("should send a 400", async () => {

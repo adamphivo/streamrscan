@@ -4,11 +4,11 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "test": "vitest",
-    "coverage": "vitest run --coverage",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "author": "Adam Phi Vo",
   "license": "ISC",

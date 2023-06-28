@@ -1,5 +1,5 @@
 import express from "express";
-import { getInterestRates, getTopology } from "src/controllers";
+import { getInterestRates, getTopology } from "@/controllers";
 
 const NetworkRouter = express.Router();
 

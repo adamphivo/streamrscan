@@ -1,6 +1,6 @@
 import express from "express";
-import { validateEthereumAddress } from "../middlewares";
-import { ping, getStatus, getError, getAddressError } from "../controllers/app";
+import { validateEthereumAddress } from "@/middlewares";
+import { ping, getStatus, getError, getAddressError } from "@/controllers/app";
 
 const AppRouter = express.Router();
 

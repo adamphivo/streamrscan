@@ -1,8 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import axios from "axios";
-import { URLS } from "src/configurations";
-import { InterestRatesParser } from "src/schemas/InterestRates";
-import { typedFetch } from "../../utils/typedFetch";
+import { URLS } from "@/configurations";
+import { InterestRatesParser } from "@/schemas/InterestRates";
 
 export async function getInterestRates(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
