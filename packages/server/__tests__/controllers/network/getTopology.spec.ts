@@ -1,14 +1,31 @@
-import { describe, it, expect } from "vitest";
-import request from "supertest";
-import { app } from "@/app";
-import { TopologyParser } from "@/schemas/Topology";
+import { describe, test, expect, vi } from "vitest";
+import { getTopology } from "@/controllers";
+import * as exports from "@/services/network";
+import { NextFunction, Request, Response } from "express";
 
-describe("Topology test suite", () => {
-  it("should return the interest rates", async () => {
-    const response = await request(app).get("/topology");
+describe("Topology rates test suite", () => {
+  test("pass down the error", async () => {
+    const expectedError = Error("test");
+    const req = {} as Request;
+    const res = {} as Response;
+    const next = vi.fn() as unknown as NextFunction;
 
-    expect(response.status).toBe(200);
+    vi.spyOn(exports, "fetchTopology").mockRejectedValue(expectedError);
 
-    TopologyParser.parse(response.body.data);
+    await getTopology(req, res, next);
+
+    expect(next).toBeCalledWith(expectedError);
+  });
+  test("pass down the error", async () => {
+    const mockData = { lastRewards: [] };
+    const req = {} as Request;
+    const res = { json: vi.fn() } as unknown as Response;
+    const next = vi.fn() as unknown as NextFunction;
+
+    vi.spyOn(exports, "fetchTopology").mockResolvedValue(mockData);
+
+    await getTopology(req, res, next);
+
+    expect(res.json).toBeCalledWith({ data: mockData });
   });
 });

@@ -1,15 +1,11 @@
 import { Request, Response, NextFunction } from "express";
-import axios from "axios";
-import { URLS } from "@/configurations";
-import { TopologyParser } from "@/schemas/Topology";
+import { fetchTopology } from "@/services/network";
 
 export async function getTopology(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const { data } = await axios.get(URLS.BRUBECK_NETWORK_TOPOLOGY);
+    const topology = await fetchTopology();
 
-    const interestRates = TopologyParser.parse(data);
-
-    res.json({ data: interestRates });
+    res.json({ data: topology });
   } catch (e) {
     next(e);
   }
