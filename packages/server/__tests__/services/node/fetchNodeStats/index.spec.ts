@@ -9,6 +9,13 @@ const mockData = {
     claimedRewardCodes: [],
   },
 };
+const invalidMockData = {
+  data: {
+    claimCount: 0,
+    claimPercentage: 0,
+    claimedRewardCodes: [],
+  },
+};
 
 describe("Fetch node stats", () => {
   test("should return the formated data", async () => {
@@ -17,6 +24,13 @@ describe("Fetch node stats", () => {
     vi.spyOn(axios, "get").mockReturnValue(data);
 
     expect(fetchNodeStats("1")).resolves.toStrictEqual(mockData.data);
+  });
+  test("should work with an invalid node", async () => {
+    const data = Promise.resolve(invalidMockData);
+
+    vi.spyOn(axios, "get").mockReturnValue(data);
+
+    expect(fetchNodeStats("1")).resolves.toStrictEqual(invalidMockData.data);
   });
   test("should throw an error in case of changed API", async () => {
     const data = Promise.resolve({ data: { DATA: "12" } });

@@ -27,6 +27,24 @@ describe("Fetch node rewards", () => {
 
     expect(fetchPayouts("0x7f82e2f593ae1aec6d499d0dc133c8f5d38302d9")).resolves.toStrictEqual(expected);
   });
+  test("should work with an invalid node", async () => {
+    const data = Promise.resolve({
+      data: {
+        data: {
+          erc20Transfers: [],
+        },
+      },
+    });
+
+    const expected = {
+      total: 0,
+      payouts: [],
+    };
+
+    vi.spyOn(axios, "post").mockReturnValue(data);
+
+    expect(fetchPayouts("0x7f82e2f593ae1aec6d499d0dc133c8f5d38302d9")).resolves.toStrictEqual(expected);
+  });
   test("should throw an error in case of changed API", async () => {
     const data = Promise.resolve({ data: { DATA: "12" } });
 

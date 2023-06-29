@@ -8,7 +8,14 @@ describe("Fetch node rewards", () => {
 
     vi.spyOn(axios, "get").mockReturnValue(data);
 
-    expect(fetchNodeRewards("1")).resolves.toStrictEqual({ DATA: 12 });
+    expect(fetchNodeRewards("1")).resolves.toStrictEqual({ reward: 12 });
+  });
+  test("should work with an invalid node", async () => {
+    const data = Promise.resolve({ data: { DATA: null } });
+
+    vi.spyOn(axios, "get").mockReturnValue(data);
+
+    expect(fetchNodeRewards("1")).resolves.toStrictEqual({ reward: 0 });
   });
   test("should throw an error in case of changed API", async () => {
     const data = Promise.resolve({ data: { DATA: "12" } });

@@ -10,6 +10,13 @@ describe("Fetch node rewards", () => {
 
     expect(fetchDataStaked("0x7f82e2f593ae1aec6d499d0dc133c8f5d38302d9")).resolves.toStrictEqual({ dataStaked: 12 });
   });
+  test("should work with an invalid node", async () => {
+    const data = Promise.resolve({ data: { data: { erc20Balances: [] } } });
+
+    vi.spyOn(axios, "post").mockReturnValue(data);
+
+    expect(fetchDataStaked("0x7f82e2f593ae1aec6d499d0dc133c8f5d38302d9")).resolves.toStrictEqual({ dataStaked: 0 });
+  });
   test("should throw an error in case of changed API", async () => {
     const data = Promise.resolve({ data: { DATA: "12" } });
 
