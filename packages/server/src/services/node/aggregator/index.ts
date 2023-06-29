@@ -9,7 +9,7 @@ export async function aggregate(address: string): Promise<NodeParserOutput> {
 
   const data = await Promise.all(promises);
 
-  const node = NodeParser.parse({ ...data[0], ...data[1], ...data[2], ...data[3] });
+  const node = NodeParser.parse({ ...data[0], ...data[1], ...data[2], ...data[3], address });
 
   return node;
 }

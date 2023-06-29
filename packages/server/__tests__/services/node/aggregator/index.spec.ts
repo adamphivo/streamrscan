@@ -13,6 +13,6 @@ describe("Fetch node rewards", () => {
 
     const data = await Promise.all(promises);
 
-    NodeParser.parse({ ...data[0], ...data[1], ...data[2], ...data[3] });
+    NodeParser.parse({ ...data[0], ...data[1], ...data[2], ...data[3], address: "test" });
   });
 });
