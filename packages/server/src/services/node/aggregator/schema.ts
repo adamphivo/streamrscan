@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { RewardCodeParser } from "@/services/node";
 import { URLS } from "@/configurations";
+import { appState } from "@/utils";
 
 export const NodeParser = z
   .object({
@@ -17,6 +18,7 @@ export const NodeParser = z
     ...node,
     identicon: URLS.IDENTICON_BASE + node.address,
     polygon: URLS.POLYGONSCAN_BASE + node.address,
+    status: appState.getLatestRewardCode() === node.claimedRewardCodes[0].id || appState.getLatestRewardCode() === node.claimedRewardCodes[1].id,
   }));
 
 export type NodeParserInput = z.input<typeof NodeParser>;
